@@ -1,0 +1,6 @@
+.MuiAppBar-root {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    padding: 10px !important;
+    box-shadow: none;
+    color: white;
+}
