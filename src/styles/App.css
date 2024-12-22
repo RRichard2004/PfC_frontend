@@ -1,0 +1,99 @@
+.loginPage{
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8rem 2rem 3rem 2rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+input{
+    all: unset;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+input::placeholder {
+    color: #9f9f9f; /* Change to your desired color */
+    font-size: 1rem; /* Optional: Adjust font size if needed */
+}
+
+.labelAboveInput{
+    all: unset;
+}
+.doerButton{
+    all: unset;
+    font-size:medium;
+    text-align: center;
+    width: 60px;
+    padding: 0.4rem 0.4rem;
+    background-color: #eeeeee;
+    border: #eeeeee 0.7px solid;
+    color: #202020;
+    transition: all 0.1s ease-in-out;
+}
+.doerButton:hover{
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    background-color: #454545;
+    color: inherit;
+    border: #eeeeee 0.7px solid;
+}
+
+.switchContainer{
+    all: unset;
+    margin-top: 5rem;
+    width: 90%;
+    display: flex;
+    align-items: start;
+}
+
+.switchContainer button{
+    all: unset;
+    cursor: pointer;
+    padding-inline: 0.2rem;
+    text-decoration: underline;
+}
+.switchContainer button:hover{
+    text-decoration: none;
+}
+
+
+.welcomePage{
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 3rem 3rem 8rem 3rem;
+    gap: 4rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.welcomePage h1{
+    margin: 0;
+}
+.welcomePage h2{
+    margin-left: 0.4rem;
+}
+
+.welcomePage div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-wrap: wrap;
+    word-wrap: break-word;
+    gap: 0.1rem;
+}
+
+.welcomePage button{
+    all: unset;
+    cursor: pointer;
+    padding-inline: 0.2rem;
+    text-decoration: underline;
+    align-self: flex-end;
+}
+.welcomePage button:hover{
+    text-decoration: none;
+}

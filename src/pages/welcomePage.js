@@ -21,15 +21,9 @@ export default function WelcomePage() {
         
         axios.post('http://localhost:3005/logout', { username })
             .then((response) => {
-                
-                // Clear cookies or perform any other logout tasks here
                 Cookies.remove('session_key');
                 Cookies.remove('username');
-                
-                // Dispatch logout action
                 dispatch(logout());
-                
-                // Navigate after logout
                 navigate('/');
             })
             .catch((error) => {
@@ -40,13 +34,12 @@ export default function WelcomePage() {
     
 
     return (
-        <Box sx={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            gap: 2, 
-            justifyContent: 'center' }}>
-                <h1>Welcome, {username}!</h1>
-                <button onClick={handleLogout}>Logout</button>
-        </Box>
+        <div className="welcomePage">
+            <button onClick={handleLogout}>Logout</button>
+            <div>
+                <h1>Welcome!</h1>
+                <h2>{username}</h2>
+            </div>
+        </div>
     );
 }

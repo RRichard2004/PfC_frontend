@@ -13,9 +13,7 @@ export default function App() {
   const navigate = useNavigate();
   const userdata = useSelector((state) => state.auth);
 
-  console.log(userdata.username, userdata.sessionKey);
-  
-  useEffect(() => { //on login or logout
+  useEffect(() => {
     Cookies.set('session_key', userdata.session_key, { secure: true, httpOnly: true });
     Cookies.set('username', userdata.username, { secure: true, httpOnly: true });
   }, [userdata]);
