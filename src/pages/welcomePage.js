@@ -4,6 +4,8 @@ import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../authSlice';
+import { Box } from '@mui/material';
+import '../styles/App.css';
 
 export default function WelcomePage() {
     const navigate = useNavigate();
@@ -38,10 +40,13 @@ export default function WelcomePage() {
     
 
     return (
-        <div>
-            <h1>Welcome, {username}!</h1>
-            <button onClick={handleLogout}>Logout</button>
-            <button onClick={() => console.log(Cookies.get('session_key'))}>logsessionkey</button>
-        </div>
+        <Box sx={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: 2, 
+            justifyContent: 'center' }}>
+                <h1>Welcome, {username}!</h1>
+                <button onClick={handleLogout}>Logout</button>
+        </Box>
     );
 }
