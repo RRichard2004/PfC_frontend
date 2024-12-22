@@ -19,7 +19,7 @@ export default function WelcomePage() {
     const handleLogout = () => {
         const username = Cookies.get('username');
         
-        axios.post('http://localhost:3005/logout', { username })
+        axios.post('http://quatrohosting.ddns.net/logout', { username })
             .then((response) => {
                 Cookies.remove('session_key');
                 Cookies.remove('username');

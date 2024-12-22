@@ -30,7 +30,7 @@ export default function LoginPage() {
     
         const body = { username, password };
     
-        axios.post('http://localhost:3005/login', body)
+        axios.post('http://quatrohosting.ddns.net/login', body)
             .then((response) => {
                 Cookies.set('session_key', response.data.session_key);
                 Cookies.set('username', response.data.username);
@@ -66,7 +66,7 @@ export default function LoginPage() {
     
         const body = { username, password };
     
-        axios.post('http://localhost:3005/register', body)
+        axios.post('http://quatrohosting.ddns.net/register', body)
             .then((response) => {
                 enqueueSnackbar("Successful registration", {
                     variant: 'success',
