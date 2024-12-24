@@ -30,7 +30,7 @@ export default function LoginPage() {
     
         const body = { username, password };
     
-        axios.post('http://quatrohosting.ddns.net/login', body)
+        axios.post('http://quatrohosting.ddns.net:3005/login', body)
             .then((response) => {
                 Cookies.set('session_key', response.data.session_key);
                 Cookies.set('username', response.data.username);
@@ -66,7 +66,7 @@ export default function LoginPage() {
     
         const body = { username, password };
     
-        axios.post('http://quatrohosting.ddns.net/register', body)
+        axios.post('http://quatrohosting.ddns.net:3005/register', body)
             .then((response) => {
                 enqueueSnackbar("Successful registration", {
                     variant: 'success',
@@ -102,7 +102,7 @@ export default function LoginPage() {
                     flexDirection: 'column',
                     width: '70%',
                     justifyContent: 'center' }}>
-                    <label className='labelAboveInput'>Email</label>
+                    <label className='labelAboveInput'>Username</label>
                     <input 
                         type="text" 
                         placeholder="John Doe" 
@@ -129,7 +129,7 @@ export default function LoginPage() {
                     flexDirection: 'column', 
                     width: '70%', 
                     justifyContent: 'center' }}>
-                    <label className='labelAboveInput'>Email</label>
+                    <label className='labelAboveInput'>Username</label>
                     <input 
                         type="text" 
                         placeholder="Dohn Joe" 
