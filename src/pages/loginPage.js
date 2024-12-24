@@ -30,7 +30,7 @@ export default function LoginPage() {
     
         const body = { username, password };
     
-        axios.post('https://quatrohosting.ddns.net:3005/login', body)
+        axios.post('http://localhost:3005/login', body)
             .then((response) => {
                 Cookies.set('session_key', response.data.session_key);
                 Cookies.set('username', response.data.username);
@@ -43,6 +43,7 @@ export default function LoginPage() {
                 navigate('/welcome');
             })
             .catch((error) => {
+                console.log(error);
                 enqueueSnackbar("Invalid username or password", {
                     variant: 'error',
                     autoHideDuration: 3000,
@@ -66,7 +67,7 @@ export default function LoginPage() {
     
         const body = { username, password };
     
-        axios.post('https://quatrohosting.ddns.net:3005/register', body)
+        axios.post('http://localhost:3005/register', body)
             .then((response) => {
                 enqueueSnackbar("Successful registration", {
                     variant: 'success',
@@ -119,6 +120,7 @@ export default function LoginPage() {
                         style={{marginBottom: '0.7rem'}}
                         name="password" 
                         autoComplete="current-password" 
+                        onKeyDown={(e) => {if (e.key === 'Enter') {handleLogin()}}}
                     />
                     <button className='doerButton' type="submit" onClick={() => {handleLogin()}}>Sign In</button>
                 </Box>
@@ -144,6 +146,7 @@ export default function LoginPage() {
                         placeholder="secret123" 
                         id="register_password" 
                         style={{ marginBottom: '0.7rem' }} 
+                        onKeyDown={(e) => {if (e.key === 'Enter') {register()}}}
                         name="password" 
                         autoComplete="new-password" 
                     />
