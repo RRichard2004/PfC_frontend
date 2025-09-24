@@ -30,7 +30,7 @@ export default function LoginPage() {
     
         const body = { username, password };
     
-        axios.post('https://quatrohosting.ddns.net:3005/login', body)
+        /*axios.post('', body)//backend api
             .then((response) => {
                 Cookies.set('session_key', response.data.session_key);
                 Cookies.set('username', response.data.username);
@@ -49,6 +49,16 @@ export default function LoginPage() {
                     TransitionComponent: Slide,
                 });
             });
+        */
+
+        dispatch(login({ session_key: "fake_session_key", username: body.username }));
+        enqueueSnackbar("Successful login", {
+            variant: 'success',
+            autoHideDuration: 3000,
+            TransitionComponent: Slide,
+        });
+        navigate('/welcome');
+
     };
     
     const register = () => {
@@ -66,7 +76,7 @@ export default function LoginPage() {
     
         const body = { username, password };
     
-        axios.post('https://quatrohosting.ddns.net:3005/register', body)
+        /*axios.post('https://quatrohosting.ddns.net:3005/register', body)
             .then((response) => {
                 enqueueSnackbar("Successful registration", {
                     variant: 'success',
@@ -83,6 +93,13 @@ export default function LoginPage() {
                 });
                 console.error('Error:', error);
             });
+        */
+        enqueueSnackbar("Successful registration", {
+            variant: 'success',
+            autoHideDuration: 3000,
+            TransitionComponent: Slide,
+        });
+        setIsLogin(true);
     };
     
 
