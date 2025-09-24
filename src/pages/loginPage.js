@@ -51,8 +51,6 @@ export default function LoginPage() {
             });
         */
 
-        Cookies.set('session_key', "fake_session_key");
-        Cookies.set('username', body.username);
         dispatch(login({ session_key: "fake_session_key", username: body.username }));
         enqueueSnackbar("Successful login", {
             variant: 'success',
